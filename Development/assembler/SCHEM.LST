@@ -1,0 +1,97 @@
+Microsoft (R) Macro Assembler  Version 4.00                 5/19/20 21:03:06
+
+                                                            Page     1-1
+                                                            
+
+                                ; ─ы  ъюЁЁхъЄэюую юЄюсЁрцхэш  Ёєёёъшї сєът шёяю
+				ы№чєщЄх 
+                                ; ъюфшЁютъє 866 (т Notepad++: ьхэ■ ╩юфшЁютъш - 
+				╩юфшЁютъш - 
+                                ; ╩шЁшыышЎр - OEM 866). 
+                                ; Если текст, начиная с этой строки, читается н
+				ормально, 
+                                ; то файл в правильной кодировке. 
+                                 
+                             C  include io.asm ;подключение операций ввода-выво
+				да 
+                             C   
+                             C  .list 
+                                 
+                                 
+ 0000                           stack segment stack 
+ 0000  0080[                    	dw 128 dup (?) 
+            ????                
+                         ]      
+                                
+ 0100                           stack ends 
+                                 
+ 0000                           data segment 
+                                ; место для переменных и констант 
+                                 
+ 0000                           data ends 
+                                 
+ 0000                           code segment 'code' 
+                                	assume ss:stack, ds:data, cs:code 
+                                ; место для описания процедур 
+                                 
+ 0000                           start: 
+ 0000  B8 ---- R                	mov ax,data 
+ 0003  8E D8                    	mov ds,ax 
+                                ; команды программы должны располагаться здесь 
+                                 
+                                    finish 
+ 0005  B4 4C                  1         mov ah,4Ch
+ 0007  CD 21                  1         int 21h
+ 0009                           code ends 
+                                    end start  
+
+Microsoft (R) Macro Assembler  Version 4.00                 5/19/20 21:03:06
+
+                                                            Symbols-1
+                                                             
+
+Macros:
+
+		N a m e			Lines
+
+FINISH . . . . . . . . . . . . .  	   2
+FLUSH  . . . . . . . . . . . . .  	   1
+INCH . . . . . . . . . . . . . .  	  19
+ININT  . . . . . . . . . . . . .  	   9
+NEWLINE  . . . . . . . . . . . .  	   1
+OUTCH  . . . . . . . . . . . . .  	   7
+OUTINT . . . . . . . . . . . . .  	   1
+OUTNUM . . . . . . . . . . . . .  	  22
+OUTSTR . . . . . . . . . . . . .  	   4
+OUTWORD  . . . . . . . . . . . .  	   1
+SAME . . . . . . . . . . . . . .  	   7
+
+Segments and Groups:
+
+                N a m e         	Size	Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0009	PARA	NONE	'CODE'
+DATA . . . . . . . . . . . . . .  	0000	PARA	NONE	
+STACK  . . . . . . . . . . . . .  	0100	PARA	STACK	
+
+Symbols:            
+
+                N a m e         	Type	Value	Attr         
+
+PROCFLUSH  . . . . . . . . . . .  	L FAR 	0000		External
+PROCINCH . . . . . . . . . . . .  	L FAR 	0000		External
+PROCININT  . . . . . . . . . . .  	L FAR 	0000		External
+PROCNL . . . . . . . . . . . . .  	L FAR 	0000		External
+PROCOUTNUM . . . . . . . . . . .  	L FAR 	0000		External
+
+START  . . . . . . . . . . . . .  	L NEAR	0000	CODE
+
+
+    253 Source  Lines
+    256 Total   Lines
+     41 Symbols
+
+  49420 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors
